@@ -1,0 +1,161 @@
+//
+// Application Variables
+//-----------------------------------------------------
+
+// Colors
+$default: 							#0066FF;
+$primary-color:						#0066FF;
+$secondary-color: 					#1B2D44;
+$complementry-color:				#f6f6f6;
+$light-bg:							$complementry-color;
+$black:  							#1c1c1c;
+    
+$blue:  							#0066FF;
+$dark-blue:                         #2663D9;
+$mid-blue:                          #2D3541;
+$deep-blue:                         #5B616A;
+$light-blue:                        #9FA2A6;
+$active-blue:                       #E6F0FD;
+$medium-blue:                       #DCEAFC;
+$sky-blue:                          #DCEBFF;
+$green: 							#23B797;
+$mid-green:                         #34A751;
+$light-green:                       #7BEC66;
+$aqua:  							#7FDBFF;
+$navy:  							#001F3F;
+$teal:  							#2C8B93;
+$olive: 							#3D9970;
+$lime:  							#01FF70;
+$rad-red:							#FF3A5C;
+$mid-red:                           #FF2626;
+
+$yellow:  							#FFDC00;
+$mid-yellow:                        #FEC018;
+$orange:  							#FF851B;
+$red:     							#EC4645;
+$fuchsia: 							#F012BE;
+$purple:  							#B10DC9;
+$maroon:  							#85144B;
+
+$white:  							#fff;
+$half-white:						#f8f8f8;
+$deep-white:                        #F5F5F5;
+$silver: 							#ddd;
+$gray:   							#9C9FAA;
+$dull-gray:                         #A1A1A1;
+$mid-gray:							#8d8d8d;
+$light-gray:                        #383838;
+$box-gray:                          #f7f7f7;
+$half-black:						#363A3F;
+$mid-black:                         #000B19;
+$light-black:                       #262626;
+$mdeium-black:                      #303030;
+$deep-gray:                         #232323;
+$medium-gray:                       #F2F2F2;
+$round-gray:                        #707070;
+$count-gray:                        #616468;
+$tab-profile-gray:                  #475668;
+$voilet:                            #852BBD;
+
+
+$primary:       					$blue !default;
+$secondary:     					$green !default;
+$success:       					$green !default;
+$info:          					$blue !default;
+$warning:       					$yellow !default;
+$danger:        					$red !default;
+$light:         					$silver !default;
+$dark:          					$black !default;
+
+$disabled-color:                    #DCDCDC;
+
+// Opacity
+$disabled: 							0.6;
+$enabled:							1;
+
+// align text
+$text-center: 						center;
+$text-left: 						left;
+$text-right: 						right;
+
+/* box shadow */
+$box-shadow-none: 					none;
+$box-shadow-card: 					0 0px 4px rgba(00, 00, 00, 0.1);
+$box-shadow-btn: 					0 0px 10px rgba(00, 00, 00, 0.2);
+$box-shadow-default: 				0 0px 5px rgba(00, 00, 00, 0.16);
+$box-shadow-hover: 					0 12px 26px rgba(0, 0, 0, 0.08);
+$box-shadow-popup: 					0 0px 14px rgba(00,00,00, 0.10);
+$box-shadow-table:                  0 0px 14px rgba(0,0,0,0.16);
+$box-shadow-icon:                   0px 0px 3px rgba(0,0,0,0.16);
+$box-shadow-app:                    0px 1px 4px rgba(0,0,0,0.16);
+$box-shadow-add:                    0px 1px 4px rgba(0, 0, 0, 0.14);
+$box-shadow-chartheader:            0px 3px 3px rgba(0,0,0,0.16);
+$box-shadow-selected:               0px 12px 20px rgba(0, 0, 0, 0.16);
+
+// Font family
+$font-roboto:						'Roboto', sans-serif;
+$font-lato:							'Lato';
+$font-montserrat:					'Montserrat', sans-serif;
+$font-varela:                       'Varela Round', sans-serif;
+$font-poppins:                      'Poppins';
+$font-default:						$font-poppins;
+$font-special:                      $font-montserrat;
+
+// Font size
+$font-xs:							10px;
+$font-s:							12px;
+$font-r:							14px;
+$font-m:							16px;
+$font-mx:							17px;
+$font-ml:							18px;
+$font-l:							20px;
+$font-xl:							22px;
+$font-xxl:							24px;
+$font-xlx:							26px;
+$font-xxxl:							28px;
+$font-xxll:							30px;
+$font-large:                        47px;
+
+// Font weight
+$font-thin:							100;
+$font-light:						300;
+$font-regular:						400;
+$font-medium:						500;
+$font-semibold:                     600;   
+$font-bold:							700;
+$font-black:						900;
+
+// Primary font
+$body-font: 						$font-default;
+
+// Background color
+$default-bg: 						$white;
+$model-bg:                          #fcfcfc;
+
+//Border
+$border:							#ebebeb;
+$input-border:						#9C9FAA;
+$login-border:                      #8C8E91;
+$dark-border:                       #8C8E91;
+$card-border:                       #E5E5E5;
+$right-border:                      #989898;
+
+//Transition
+$transition-height:					max-height .25s;
+$bg-transition:						background 0.25s ease;
+$color-transition:					color 0.2s ease;
+$width-transition:					width 0.25s ease;
+$all-transition:					all 0.25s;
+$tab-transition:                    transform 250ms ease,-webkit-transform 250ms ease;
+$hover-transition:                  all .2s ease;
+
+// Animation
+$check-animation:					stroke 0.8s forwards;
+
+// Image
+$img-xs:							35px;
+$img-s:								45px;
+$img-m:								55px;
+$img-l:								65px;
+$img-xl:							75px;
+$img-xxl:							130px;

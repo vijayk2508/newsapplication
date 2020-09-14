@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p># Boilerplate</p>
+<p>This repository is a boilerplate/starter-kit which we can utilise for any project here.<br>
+It’s a bit opinionated according to the experiences/challenges that we have faced till now regarding development flow and contains some folder structures and pre-installed packages to enforce best practices and better code standards.</p>
+<h2 id="folder-structure">Folder Structure:</h2>
+<pre class=" language-json"><code class="prism  language-json">my<span class="token operator">-</span>app<span class="token operator">/</span>
+	README<span class="token punctuation">.</span>md
+	README<span class="token punctuation">.</span>html
+	Create<span class="token operator">-</span>React<span class="token operator">-</span>App<span class="token operator">-</span>README<span class="token punctuation">.</span>md
+	node_modules<span class="token operator">/</span>
+	<span class="token keyword">package</span><span class="token punctuation">.</span>json
+	<span class="token keyword">public</span><span class="token operator">/</span>
+		index<span class="token punctuation">.</span>html
+		favicon<span class="token punctuation">.</span>ico
+	src<span class="token operator">/</span>
+		action<span class="token operator">-</span>reducer<span class="token operator">/</span>
+		apiEndpoints<span class="token operator">/</span>
+		assets<span class="token operator">/</span>
+		common<span class="token operator">/</span>
+		components<span class="token operator">/</span>
+		constants<span class="token operator">/</span>
+		containers<span class="token operator">/</span>
+		custom<span class="token operator">-</span>hooks<span class="token operator">/</span>
+		helper<span class="token operator">/</span>
+		polyfills<span class="token operator">/</span>
+		routes<span class="token operator">/</span>
+		services<span class="token operator">/</span>
+		store<span class="token operator">/</span>
+		UIComponents<span class="token operator">/</span>
+		main<span class="token punctuation">.</span>scss
+		serviceWorker<span class="token punctuation">.</span>js
+	<span class="token punctuation">.</span>gitignore
+</code></pre>
+<h3 id="folder-description">Folder Description:</h3>
+<ol>
+<li><strong>action-reducer</strong>: This will contain a folder based on the reducer name, for example:</li>
+</ol>
+<pre class=" language-json"><code class="prism  language-json">action<span class="token operator">-</span>reducer<span class="token operator">/</span>
+ login<span class="token operator">/</span>
+	 loginReducer<span class="token punctuation">.</span>js
+	 loginConstants<span class="token punctuation">.</span>js
+	 loginActions<span class="token punctuation">.</span>js
+</code></pre>
+<p>Finally, it will also contain an <code>appReducer.js</code> where you can export all the reducers that you have created till now.</p>
+<ol start="2">
+<li>
+<p><strong>api-endpoints</strong>: This folder will contain an object which maps all api-endpoint URLs to constant keys.<br>
+Use these keys in any of your network requests.</p>
+</li>
+<li>
+<p><strong>assets</strong>: These consists of globally shared sass, images and css.</p>
+</li>
+</ol>
+<pre class=" language-json"><code class="prism  language-json">assets<span class="token operator">/</span>
+	 css
+	 img
+	 sass
+</code></pre>
+<ol start="4">
+<li>
+<p><strong>common</strong>: Consists of some common utility components.<br>
+Example: <code>LazyLoad</code> component which can be used to load any component lazily.<br>
+For more details on <code>LazyLoad</code> component, refer the component file.</p>
+</li>
+<li>
+<p><strong>components</strong>: This is the heart of your code base. It will consist of all the components that you will be developing. Each component <strong>must</strong> have <strong>atleast</strong> the following minimal structure:</p>
+<pre class=" language-json"><code class="prism  language-json">	components<span class="token operator">/</span>
+			Login<span class="token operator">/</span>
+				index<span class="token punctuation">.</span>js
+				optionalFilesOrFolders
+			Register<span class="token operator">/</span>
+				index<span class="token punctuation">.</span>js
+				<span class="token operator">...</span>
+				<span class="token operator">...</span>
+			SomeComponent<span class="token operator">/</span>
+				index<span class="token punctuation">.</span>js
+</code></pre>
+<p>This structure can be improved upon for sure.</p>
+</li>
+<li>
+<p><strong>constants</strong>: This folder will consist of all the constants that will be used in the app except reducer based and route based constants.<br>
+A must have file in the folder is <code>portConstants.js</code> which will contain the baseURL for all your API requests.</p>
+</li>
+<li>
+<p><strong>containers</strong>: Containers are <strong>Top-level</strong> components. They can be generally your routes’ root/parent component or a parent component to a set of deeply nested or complex components in some cases.</p>
+</li>
+<li>
+<p><strong>custom-hooks</strong>: This houses any custom hooks that you create and use in your application.</p>
+</li>
+<li>
+<p><strong>helper</strong>: Any helper functions like a generic <code>formValidator.js</code>, etc.</p>
+</li>
+<li>
+<p><strong>polyfills</strong>: All polyfills that you might need to include in your application. You will probably not need to use it that much. If you are creating a new polyfill, you just need to import it in the index.js of the folder.</p>
+<p><em>Polyfill folder</em>:</p>
+<pre class=" language-json"><code class="prism  language-json">	polyfills<span class="token operator">/</span>
+		<span class="token operator">...</span>
+		somePolyfill1<span class="token punctuation">.</span>js
+		somePolyfill2<span class="token punctuation">.</span>js
+		<span class="token operator">...</span>
+		index<span class="token punctuation">.</span>js
+</code></pre>
+<p><em>polyfills/index.js</em> :</p>
+<pre class=" language-json"><code class="prism  language-json">	<span class="token keyword">import</span> <span class="token string">"./somePolyfill1.js"</span><span class="token punctuation">;</span>
+	<span class="token keyword">import</span> <span class="token string">"./newPolyfill2.js"</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ol>
+<ol start="11">
+<li><strong>routes</strong>: This folder consists of a set of file that you do not need to edit. The only change you need to do for adding a route is to just add another <code>RouteObjectType</code> in the routeConstants.js.<pre class=" language-json"><code class="prism  language-json">RouteObjectType <span class="token operator">=</span> <span class="token punctuation">{</span>
+	path<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+	exact<span class="token punctuation">:</span> <span class="token function">oneOf</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	routeComponentParent<span class="token punctuation">:</span> <span class="token function">oneOf</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"containers"</span><span class="token punctuation">,</span> <span class="token string">"components"</span><span class="token punctuation">,</span> <span class="token string">"UIComponents"</span><span class="token punctuation">,</span> <span class="token string">"common"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+	routeComponentPath<span class="token punctuation">:</span> string<span class="token punctuation">,</span>
+	isAuthenticated<span class="token punctuation">:</span> <span class="token function">oneOf</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+Internally, the component will dynamically load all the routes and will also follow route-based code-splitting to load each route only <strong><em>on-demand</em></strong>.</li>
+<li><strong>services</strong>: This folder consists of any <em>services</em> based functionality like network requests to the server. <em>Services</em> based functionalities can be described as the functions which help us to interact with the server ( through <code>xmlHttpRequests</code>, <code>ajax</code>, <code>axios</code>, <code>fetch</code> , <code>sockets</code>, or any other medium) .<br>
+The folder exports a single function <code>sendApiRequest</code>.</li>
+</ol>
+<p><em>Prototype for sendApiRequest</em>:</p>
+<pre class=" language-json"><code class="prism  language-json">	<span class="token function">sendApiRequest</span><span class="token punctuation">(</span>apiParamsObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><em><code>apiParamsObject</code> has the following schema:</em></p>
+<pre class=" language-json"><code class="prism  language-json">	apiParamsSchema  <span class="token operator">=</span>  <span class="token function">struct</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		url<span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span>
+		method<span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span>
+		baseURL<span class="token punctuation">:</span> <span class="token string">"string?"</span><span class="token punctuation">,</span>
+		transformRequest<span class="token punctuation">:</span> <span class="token string">"function?"</span><span class="token punctuation">,</span>
+		transformResponse<span class="token punctuation">:</span> <span class="token string">"function?"</span><span class="token punctuation">,</span>
+		headers<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		params<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		paramsSerializer<span class="token punctuation">:</span> <span class="token string">"function?"</span><span class="token punctuation">,</span>
+		data<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		timeout<span class="token punctuation">:</span> <span class="token string">"number?"</span><span class="token punctuation">,</span>
+		withCredentials<span class="token punctuation">:</span> <span class="token string">"boolean?"</span><span class="token punctuation">,</span>
+		adapter<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		auth<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		responseType<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		xsrfCookieName<span class="token punctuation">:</span> <span class="token string">"string?"</span><span class="token punctuation">,</span>
+		xsrfHeaderName<span class="token punctuation">:</span> <span class="token string">"string?"</span><span class="token punctuation">,</span>
+		onUploadProgress<span class="token punctuation">:</span> <span class="token string">"function?"</span><span class="token punctuation">,</span>
+		onDownloadProgress<span class="token punctuation">:</span> <span class="token string">"function?"</span><span class="token punctuation">,</span>
+		maxContentLength<span class="token punctuation">:</span> <span class="token string">"number?"</span><span class="token punctuation">,</span>
+		validateStatus<span class="token punctuation">:</span> <span class="token string">"function?"</span><span class="token punctuation">,</span>
+		maxRedirects<span class="token punctuation">:</span> <span class="token string">"number?"</span><span class="token punctuation">,</span>
+		socketPath<span class="token punctuation">:</span> <span class="token string">"string?"</span><span class="token punctuation">,</span>
+		httpAgent<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		httpsAgent<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		proxy<span class="token punctuation">:</span> <span class="token string">"object?"</span><span class="token punctuation">,</span>
+		cancelToken<span class="token punctuation">:</span> <span class="token string">"object?"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Any object passed through <code>sendApiRequest</code> will be validated with this schema ( <strong>only in development mode</strong> ) and will throw an exception with a suitable message if any wrong param is passed through the function.</p>
+<ol start="13">
+<li><strong>store</strong>: The root of redux where the store is initialized.<br>
+Folder structure:</li>
+</ol>
+<pre class=" language-json"><code class="prism  language-json">	store<span class="token operator">/</span>
+		index<span class="token punctuation">.</span>js
+		middleware<span class="token punctuation">.</span>js
+</code></pre>
+<p>You might need the <code>middleware.js</code> for <strong>Global Actions</strong> like restting the whole redux state on logout.<br>
+The advantage is that you do not need to add a case for this Global Action in every reducer.<br>
+You won’t be needing to make any changes in index.js.<br>
+Please add any global actions to the function exposed in middleware.js only.</p>
+<ol start="14">
+<li><strong>UIComponents</strong>: This folder is the source of our UI Component kit. The target is to add a well thought of and <strong>highly reusable</strong> component library which should be compliant with all <strong>Web/HTML standards and should comply with accessibility properties</strong>.</li>
+</ol>
+<h2 id="boilerplate-packages">Boilerplate Packages</h2>
+<ol>
+<li>Immer.js - A function that allows you to work with immutable state in a more convenient way.<br>
+<strong>Please note: We must use immer in all our reducers. Previously we were using <code>lodash.clonedeep</code> to prevent mutation but that has been removed as it is not so good for performance. So, as we refactor through our previous codes, please add immer to every reducer and remove any occurences of clonedeep.</strong></li>
+</ol>
+<pre class=" language-json"><code class="prism  language-json"><span class="token keyword">import</span>  produce  <span class="token keyword">from</span>  <span class="token string">"immer"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span>  loginConstants  <span class="token keyword">from</span>  <span class="token string">"./loginConstants"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> cookies <span class="token punctuation">}</span> <span class="token keyword">from</span>  <span class="token string">"../../services/auth"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span>  initialState  <span class="token operator">=</span> <span class="token punctuation">{</span>
+	isLoggedIn<span class="token punctuation">:</span> <span class="token operator">!</span><span class="token operator">!</span>cookies<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"SID"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> loginReducer <span class="token operator">=</span> <span class="token function">produce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">case</span>  loginConstants<span class="token punctuation">.</span>LOGIN_SUCCESSFUL<span class="token punctuation">:</span>
+			state<span class="token punctuation">.</span>isLoggedIn <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+			<span class="token keyword">break</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">case</span>  loginConstants<span class="token punctuation">.</span>LOGOUT_SUCCESSFUL<span class="token punctuation">:</span>
+			state<span class="token punctuation">.</span>isLoggedIn <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+			<span class="token keyword">break</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token comment">// for es-lint :(</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> initialState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><a href="https://immerjs.github.io/immer/docs/introduction">ImmerJS Documentation</a><br>
+<a href="https://egghead.io/lessons/redux-simplify-creating-immutable-data-trees-with-immer">ImmerJS basics tutorial ( 7mins )</a></p>
+<ol start="2">
+<li>
+<p>React-router:<br>
+<a href="https://reacttraining.com/react-router/">React-router-documentation</a></p>
+</li>
+<li>
+<p>Connected-react-router:<br>
+<a href="https://github.com/supasate/connected-react-router">Connected-react-router-documentation</a></p>
+</li>
+<li>
+<p>React-router-dom</p>
+</li>
+<li>
+<p>Redux:<br>
+<a href="https://redux.js.org/">Redux website</a></p>
+</li>
+<li>
+<p>React-redux:<br>
+<a href="https://react-redux.js.org/">React redux website</a></p>
+</li>
+<li>
+<p>Redux-thunk<br>
+<a href="https://github.com/reduxjs/redux-thunk">Redux thunk docs</a></p>
+</li>
+<li>
+<p>Prop-types<br>
+<a href="https://reactjs.org/docs/typechecking-with-proptypes.html">Prop-types (React.js official website docs)</a></p>
+</li>
+<li>
+<p>Styled-components<br>
+<a href="https://www.styled-components.com/">Styled-components official website</a></p>
+</li>
+<li>
+<p>Classnames:<br>
+<a href="https://github.com/JedWatson/classnames">Classnames docs</a></p>
+</li>
+<li>
+<p>Node-sass<br>
+<a href="https://github.com/sass/node-sass">Node-sass github</a><br>
+You do not need to make any changes with node-sass</p>
+</li>
+<li>
+<p>React-cookie<br>
+<a href="https://www.npmjs.com/package/react-cookie">React cookie npm page</a></p>
+</li>
+<li>
+<p>Axios ( or any api-request based library )<br>
+<a href="https://github.com/axios/axios">Axios docs</a></p>
+</li>
+<li>
+<p>Superstruct / Validate.js/ Joi-browser<br>
+<a href="https://github.com/ianstormtaylor/superstruct">Superstruct docs</a><br>
+<a href="https://validatejs.org/">Validate.js</a><br>
+<a href="https://www.npmjs.com/package/joi-browser">Joi-browser npm</a></p>
+</li>
+</ol>
+<p>You can contribute to the code or this <a href="http://Readme.md">Readme.md</a> if you think it is missing out on anything.<br>
+You can also search for : <code>// To-do:</code> (with the comments) to update the code.</p>
+<p>There are more guidelines that will be given soon so your feedback and suggestions will be much appreciated.</p>
+<h2 id="automated-templating">Automated Templating</h2>
+<p>We have introduced an automated templating which will run whenever you run <code>npm start</code>.</p>
+<p>Please make sure that your <code>"start"</code> key in <code>package.json</code> -&gt; <code>"scripts"</code> has the following value:</p>
+<pre class=" language-json"><code class="prism  language-json">
+<span class="token operator">...</span>
+
+<span class="token string">"scripts"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+	<span class="token operator">...</span>
+
+	<span class="token string">"start"</span><span class="token punctuation">:</span> <span class="token string">"node app-runner"</span>
+
+	<span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+<span class="token operator">...</span>
+
+</code></pre>
+<p>On running, the template script will check if there is any <strong>Existing</strong> file or directory that needs templating and will apply the proper templates to them.</p>
+<ul>
+<li>On creation of a directory in <code>src/action-reducer</code>, a common template is created for the ‘actions’, ‘reducer’ and ‘constants’ files following the naming convention as:</li>
+</ul>
+<pre class=" language-json"><code class="prism  language-json">
+src<span class="token operator">/</span>
+	action<span class="token operator">-</span>reducer<span class="token operator">/</span>
+		<span class="token punctuation">[</span>reducerName<span class="token punctuation">]</span><span class="token operator">/</span>
+			<span class="token punctuation">[</span>reducerName<span class="token punctuation">]</span>Actions<span class="token punctuation">.</span>js
+			<span class="token punctuation">[</span>reducerName<span class="token punctuation">]</span>Constants<span class="token punctuation">.</span>js
+			<span class="token punctuation">[</span>reducerName<span class="token punctuation">]</span>Reducer<span class="token punctuation">.</span>js
+
+</code></pre>
+<p>The <code>appReducer.js</code> is automatically updated with the new reducer following the same convention.</p>
+<ul>
+<li>On removal of a directory from <code>src/action-reducer</code>, the <code>appReducer.js</code> is updated accordingly.</li>
+</ul>
+<p>Hence, there is no need to create/edit <code>appReducer.js</code> at any moment by yourself.</p>
+<ul>
+<li>On creation of a directory in <code>src/components</code> or <code>src/containers</code> or <code>src/common</code> or <code>src/UIComponents</code>, a common template is created for the ‘index.js’ file following the naming convention as:</li>
+</ul>
+<pre class=" language-json"><code class="prism  language-json">
+src<span class="token operator">/</span>
+   <span class="token punctuation">[</span>components<span class="token operator">|</span>containers<span class="token operator">|</span>common<span class="token operator">|</span>UIComponents<span class="token punctuation">]</span><span class="token operator">/</span>
+									<span class="token punctuation">[</span>ComponentName<span class="token punctuation">]</span><span class="token operator">/</span>
+												index<span class="token punctuation">.</span>js
+
+</code></pre>
+<p>Please make the directory name’s first letter as Capitalized as it will be the Component’s name in your <code>index.js</code>.</p>
+<p>For example,</p>
+<p>For a directory <code>src/components/Login</code>, the template will be:</p>
+<pre class=" language-json"><code class="prism  language-json">
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">Login</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">return</span>  <span class="token punctuation">(</span>
+		<span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Login<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Login<span class="token punctuation">;</span>
+
+</code></pre>
+<p>Notice the use of the directory name as the component’s name.</p>
+<ul>
+<li>On creation of any <code>.scss</code> or <code>.sass</code> files, a default template will be added to that <code>.scss</code> or <code>.sass</code> which will import all the defaults that must be imported in order to use the global/shared SASS assets properly.</li>
+</ul>
+<p>Three <code>dev-dependencies</code> have been added for templating flow. You do not need to worry about these dependencies sneaking in to your production as they are (as the name says) <strong>only for development</strong>. You can go through the docs of the added dependencies if you want to contribute:</p>
+<ol>
+<li>
+<p>Chalk: <a href="https://github.com/chalk/chalk">Chalk Documentation</a></p>
+</li>
+<li>
+<p>Concurrently: <a href="https://github.com/kimmobrunfeldt/concurrently">Concurrently Documentation</a></p>
+</li>
+<li>
+<p>Chokidar: [<a href="https://github.com/paulmillr/chokidar">https://github.com/paulmillr/chokidar</a>](Chokidar Documentation)</p>
+</li>
+<li>
+<p>Cross-env: [<a href="https://github.com/kentcdodds/cross-env">https://github.com/kentcdodds/cross-env</a>](Cross-env Documentation)</p>
+</li>
+<li>
+<p>React-dev-utils: [<a href="https://github.com/facebook/create-react-app/tree/master/packages/react-dev-utils">https://github.com/facebook/create-react-app/tree/master/packages/react-dev-utils</a>](React-dev-utils Documentation)</p>
+</li>
+</ol>
+<ul>
+<li>Removed <code>detect-port-alt</code> but can be useful later.</li>
+</ul>
+</div>
+</body>
+
+</html>

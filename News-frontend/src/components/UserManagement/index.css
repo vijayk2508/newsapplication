@@ -1,0 +1,82 @@
+.custom-row{
+margin: 0px !important;
+}
+
+.card {
+    margin-bottom: 20px !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+}
+
+.card-subtitle {
+    margin-top: -.375rem;
+    margin-bottom: 0;
+}
+
+.text-muted {
+    color: #6c757d!important;
+}
+
+.mb-2, .my-2 {
+    margin-bottom: .5rem!important;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: "Poppins";
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.custom-btn{
+background:white;
+padding: 2px 5px 2px 5px;
+border-radius: 4px;
+font-size: 14px;
+border: 1px solid#7c7cec;
+border-style: double;
+}
+
+.custom-btn-save{
+background:cornflowerblue;
+color:white;
+padding: 1px 6px 1px 6px;
+}
+
+.btnSelect{
+border: 1px solid black;
+background:white;
+padding: 1px 7px 1px 8px;
+border-radius: 3px;
+}
+
+.btnSelected{
+    border: 1px solid#068002;
+    background:#43d043;
+    padding: 1px 7px 1px 8px;
+    border-radius: 3px;
+    color:white;
+}
+

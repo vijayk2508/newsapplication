@@ -1,0 +1,213 @@
+// Page: Login 
+.login-page
+	padding-top: 0px
+
+.login-content
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	min-height: 100vh
+
+.login-con
+	min-width: 30vw
+	max-width: 500px
+	box-shadow: $box-shadow-card
+	padding: 40px
+	@include border-radius(10px)
+	z-index: 99
+	background: $white
+	.logo
+		margin-bottom: 0px
+		color: $black
+		padding: 15px 0px
+		text-align: center
+		color: $default
+		z-index: 999
+		h1
+			font-size: 20px
+			text-transform: uppercase
+	.register
+		min-height: 85vh !important
+	.login-box
+		position: relative	
+		min-height: 200
+		padding-top: 0px
+		perspective: 800px
+		transition: all 0.5s ease-in-out
+		.login-head
+			width: 100%
+			float: left
+			margin-top: 10px
+			margin-bottom: 15px
+			text-align: center
+			font-size: 20px
+			
+		label
+			width: 100%
+			color: $mid-black
+			background-color: transparent
+			font-size: $font-m
+			z-index: 10
+			margin: 0 0 20px 0
+			img
+				float: right
+		p
+			font-size: $font-s
+			color: $half-black
+			display: block
+		a
+			color: $default
+			font-size: $font-r
+		.utility
+			display: flex
+			padding: 1px
+			justify-content: space-between
+			align-items: center					
+			
+			.form-checkbox
+				label
+					font-size: $font-s
+				.magic-checkbox + label
+					&:before
+						border: 1px solid white
+				.magic-checkbox:checked + label:before
+						border-color: $default !important
+		.btn-container
+			margin-bottom: 0
+		.form-group
+			//margin-bottom: 15px
+			//margin-top: 0
+			text-transform: capitalize
+			&.failure
+				.form-control
+					border-color: $red
+				.error-msg
+					color: $red
+		.login-form, .forget-form
+			// padding: 40px
+			backface-visibility: hidden
+			-webkit-backface-visibility: hidden
+			transition: all 0.5s ease-in-out
+			.vector
+				@extend .wd-100
+				text-align: center
+				h1
+					color: $black
+					font-size: $font-xlx
+					text-align: left
+				img
+					height: auto
+					max-height: 50px
+			.form-control
+				margin-bottom: 0
+				background: $white
+				color: $black
+				padding: 20px
+				padding-left: 40px
+				border: 1px solid $border
+				@include border-radius(4px)
+				&:focus
+					border: 0
+					// box-shadow: 0 2px 0 0 $default
+					border: 1px solid $default
+					background: transparent
+					color: $black
+				&::placeholder
+					color: $white !important
+			
+			.btn
+				font-size: $font-l
+				padding: 8px 15px
+				line-height: 2
+		.forget-form
+			opacity: 0
+			transform: rotateY(180deg)
+
+		&.flipped
+			min-height: 300px
+			.login-form
+				opacity: 0
+				transform: rotateY(-180deg)
+
+			.forget-form
+				opacity: 1
+				transform: rotateY(0deg)
+.input-con
+	position: relative
+	&.email, &.pass
+		i
+			position: absolute
+			left: 10px
+			top: 50%
+			transform: translateY(-50%)
+			font-size: $font-xl
+			color: $gray
+	.input-icon
+		position: absolute
+		left: 15px
+		top: 48%
+		transform: translateY(-48%)
+		z-index: 999
+		color: $white
+		.a
+			fill: $white
+	.eye-icon
+		position: absolute
+		right: 15px
+		top: 48%
+		transform: translateY(-48%)
+		z-index: 999
+		color: $white
+	.error
+		position: absolute
+		bottom: 20px
+		right: 6px
+		z-index: 999
+		font-size: $font-xs
+		color: $red !important
+		img
+			bottom: 0px
+	.error-msg
+		position: absolute
+		bottom: -25px !important
+		right: 0px
+		z-index: 999
+		font-size: $font-s !important
+		color: $red
+
+@media (max-width: 480px)
+	.login-con
+		min-width: 90%
+		.login-box
+			min-width: 100%
+			.login-form, .forget-form
+				width: 100%
+
+.link-register
+	text-align: center
+	margin: 0 auto
+	max-width: 460px
+	padding: 20px
+	h6
+		color: $default
+		font-size: $font-xxll
+	.logo
+		padding: 20px 0px
+		img 
+			height: 60px
+	.sub-text
+		font-size: $font-l
+		color: $mid-black
+	button
+		font-size: $font-l
+		padding: 10px 15px
+		line-height: 28px
+		margin: 25px 0
+	.footer-txt
+		color: $deep-blue
+		font-size: $font-r
+		//width: 320px
+		//margin: 0 auto
+	
+

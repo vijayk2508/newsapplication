@@ -1,0 +1,126 @@
+.modal-backdrop
+    opacity: 0 !important
+
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1050
+    text-align: center
+
+.modal:before
+    content: ''
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+    margin-right: -4px
+
+.modal-dialog.mini
+    min-width: 500px !important
+.modal-dialog
+    min-width: 950px
+    text-align: left
+    display: inline-block
+    vertical-align: middle
+    // background: $white
+    .btn
+        // margin-left: $m-10
+
+// custom modal
+.modal-dialog-content
+    position: relative
+    // background: $white
+    padding: 20px
+    transform: none !important
+    // top: auto !important
+    left: auto !important
+    height: auto
+    h2
+        margin: 10px 0
+        // font-size: $font-l
+    .option
+        position: absolute
+        right: 20px
+        top: 20px
+        z-index: 9999
+        cursor: pointer
+        // color: lighten($black, 60%)
+        &:hover
+            // color: $black
+        svg
+            height: 20px
+            // color: $black
+    .custom-modal-content
+        width: 100%
+        float: left
+        height: 100%
+        //height: calc(100% - 35px)
+        position: relative
+    .card-popup
+        // @include box-shadow(none)
+        border: 0
+.modal-z
+    z-index: 9999999 !important
+
+
+/* Modal */
+.custom-modal-container
+    position: fixed
+    top: 0
+    width: 100%
+    height: 100%
+    background: rgba(255,255,255,0.5)
+    z-index: 9999
+    display: flex
+    align-items: center
+    justify-content: center
+
+.Confirm-head
+    // color: $red
+    // font-size: $font-xl
+    // font-family: $font-interbold
+    margin-top: 0
+.Confirm-content
+    padding: 10px 0
+
+.register-popup
+    // background: $popup-gray !important
+    .pop-header
+        // color: $white
+        // font-size: $font-xl
+        // font-family: $font-interbold
+        // margin-top: 0
+    .pop-content
+        // color: $medium-gray
+        // font-size: $font-m
+    .option svg
+        color: white
+    .question-mark
+        display: none
+.forget-popup
+    // background: $popup-gray !important
+    .pop-header
+        // color: $white
+        // font-size: $font-xl
+        // font-family: $font-interbold
+    .pop-content
+        // color: $medium-gray
+        // font-size: $font-m
+    .option svg
+        color: white
+    .question-mark
+        position: absolute
+        left: 50%
+        top: 0
+        transform: translateX(-50%)
+        width: 20px
+        height: 20px
+        //@include border-radius(20px)
+        display: block
+        // background: $default
+        color: white
+        line-height: 20px
+        text-align: center
+

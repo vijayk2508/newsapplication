@@ -1,0 +1,128 @@
+/* Toggle */
+$width: 100px; // Change Me
+$height: $width / 8;
+
+input[type='checkbox'] {
+  display: none;
+  
+  &:checked ~ .toggle-s {
+    background: $primary;
+    left: 29px;
+    transition: .2s;
+  }
+  
+  &:checked ~ .switch-tog {
+    background: $white;  
+    transition: .2s;
+    border-color: $default;
+  }
+}
+
+.custom-toggle{
+  display: inline-block;
+  margin-bottom: 0px;
+  span{
+    font-size: $font-r;
+    color: $black;
+  }
+}
+
+.switch-tog {
+  cursor: pointer;
+  display: block;
+  width: 50px;
+  height: 22px;
+  background: $white;
+  border: 1px solid $input-border;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  transition: .2s;
+}
+
+.toggle-s {
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: $input-border;
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  transition: .2s;
+}
+
+.industry{
+	min-width: 70px;
+	float: left;
+	font-size: $font-s;
+}
+.function{
+	float: right;
+	text-align: right;
+	min-width: 60px;
+	font-size: $font-s;
+	margin-bottom: $m-10;
+}
+.toggle-con{
+  width: 60px;
+  float: left;
+}
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+  margin-bottom: 0;
+  input {display:none;}
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $white;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    border-radius: 34px;
+    @include box-shadow($box-shadow-default);
+    &:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      background-color: $green;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      border-radius: 50%;
+      z-index: 999;
+    }
+  }
+  input:checked + .slider {
+    background-color: $white;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(92px);
+  }
+  .slider:after{
+    content:'Testing';
+    color: $gray;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    top: 50%;
+    left: 50%;
+    font-size: 12px;
+  }
+  input:checked + .slider:after{  
+    content:'Production';
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+}

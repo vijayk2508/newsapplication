@@ -1,0 +1,40 @@
+//
+// 1 - TOOLS
+//---------------------------------------------------
+
+@import "./assets/sass/1-tools/bootstrap-source/bootstrap.scss";
+@import "./assets/sass/1-tools/fonts.scss";
+@import "./assets/sass/1-tools/vars.scss";
+
+// Custom mixin
+@import "./assets/sass/1-tools/custom-mixin.scss";
+
+// 2 - BASICS
+//---------------------------------------------------
+
+@import "./assets/sass/2-basics/helpers.sass";
+@import "./assets/sass/2-basics/layout.sass";
+@import "./assets/sass/2-basics/links.sass";
+@import "./assets/sass/2-basics/body-elements.sass";
+
+// 3 - Component
+//---------------------------------------------------
+
+@import "./assets/sass/3-component/accordion.sass";
+@import "./assets/sass/3-component/badge.sass";
+@import "./assets/sass/3-component/breadcrumbs.scss";
+@import "./assets/sass/3-component/button.scss";
+@import "./assets/sass/3-component/checkbox.scss";
+@import "./assets/sass/3-component/dropdown.sass";
+@import "./assets/sass/3-component/file-upload.scss";
+@import "./assets/sass/3-component/main-header.sass";
+@import "./assets/sass/3-component/modal.sass";
+@import "./assets/sass/3-component/progress.scss";
+@import "./assets/sass/3-component/rangeslider.scss";
+@import "./assets/sass/3-component/tabs.sass";
+@import "./assets/sass/3-component/toggle.scss";
+
+// 4 -Pages
+//---------------------------------------------------
+@import "./assets/sass/4-pages/login.sass";
+@import "./assets/sass/4-pages/ui.sass";

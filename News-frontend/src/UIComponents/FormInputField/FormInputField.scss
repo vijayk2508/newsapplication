@@ -1,0 +1,18 @@
+@import "../../assets/sass/1-tools/vars";
+
+.form-input-field {
+  display: flex;
+  flex-direction: column;
+  // padding: 1em;
+}
+
+.field-label {
+  
+}
+
+.field-input {
+  width: 100%;
+  padding: 1% 0;
+  border: none;
+  border-bottom: 1px solid $primary-color;
+}

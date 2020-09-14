@@ -1,0 +1,8 @@
+.modal-dialog-content {
+    max-height: 559px;
+    overflow-y: scroll !important;
+}
+
+.overflow-modal{
+overflow-y: scroll !important;
+}
